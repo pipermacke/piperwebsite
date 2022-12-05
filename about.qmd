@@ -2,10 +2,4 @@
 title: "About"
 ---
 
-About this site
-
-Here is some new stuff!
-
-```{r}
-1 + 1
-```
+I'm a full time student and I also play Division 1 basketball. I'm majoring in Data Science and hoping that after graduation I can stay living in a city like D.C.! 
