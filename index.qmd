@@ -12,7 +12,7 @@ about:
       href: https://github.com/pipermacke
 ---
 
-I'm Piper and I'm hoping at some point my computer works. (small bio here)
+I'm Piper. Welcome to my webpage!
 
 ## Education
 
