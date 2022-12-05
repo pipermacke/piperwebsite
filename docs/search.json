@@ -26,5 +26,12 @@
     "title": "About",
     "section": "",
     "text": "Here is some new stuff!\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "portfolio.html",
+    "href": "portfolio.html",
+    "title": "Portfolio",
+    "section": "",
+    "text": "Hey, this is my portfolio!"
   }
 ]
