@@ -12,7 +12,6 @@ website:
       - portfolio.qmd
 
 
-
 format:
   html:
     theme: cosmo
