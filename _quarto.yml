@@ -10,7 +10,7 @@ website:
         text: Home
       - about.qmd
       - portfolio.qmd
-      - paper.qmd
+      - paper
   page-footer: 
     left: "Copyright 2022" 
     right: 
