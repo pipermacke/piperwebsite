@@ -11,6 +11,7 @@ website:
       - about.qmd
       - portfolio.qmd
       - researchpaper.qmd
+      - newsstory.qmd
   page-footer: 
     left: "Copyright 2022" 
     right: 
