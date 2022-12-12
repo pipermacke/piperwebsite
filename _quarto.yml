@@ -8,11 +8,16 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
-      - portfolio.qmd
-      - researchpaper.qmd
-      - newsstory.qmd
-      - analysis.qmd
+      - href: about.qmd
+        text: About
+      - href: portfolio.qmd
+        text: Portfolio
+      - href: researchpaper.qmd
+        text: Research Paper
+      - href: newsstory.qmd
+        text: News Story
+      - href: analysis.qmd
+        text: Code Walkthrough
   page-footer: 
     left: "Copyright 2022" 
     right: 
