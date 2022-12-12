@@ -42,3 +42,112 @@ filter(impeach, for_impeachment == 'NO',
 Since we already have a column distinguishing the members by district (named "p16winningparty"), all we have to do is set it to show those with output "R".
 
 \-\-\-\-\-\-\-\-\--
+
+Now if we wanted to specify even further, say for those who voted against impeachment, were from a district Trump won in 2016, and were from a district Mitt Romney won in 2012, we would do the following:
+
+``` r
+filter(impeach, for_impeachment == 'NO', 
+       p16winningparty == 'R', 
+       p12winningparty == 'R')
+```
+
+We just use the column p12winning party this time, and set it to give outputs of "R".
+
+\-\-\-\-\-\-\-\-\--
+
+If we wanted to filter for those who voted for impeachment in the month of September 2019:
+
+``` r
+filter(impeach, for_impeachment == 'YES',
+       date_month == 9,
+       date_year == 2019)
+```
+
+As you can see, we use both the date and year to get the desired output.
+
+\-\-\-\-\-\-\-\-\--
+
+To get members that voted for impeachment and are from a district where Clinton won more than 70% of the vote in 2016:
+
+``` r
+filter(impeach, for_impeachment == 'YES',
+       clinton_percent > 70.0)
+```
+
+We can use the "greater than" symbol to specify results to ones that are larger than the desired number we're looking for, which in this case in 70.
+
+\-\-\-\-\-\-\-\-\--
+
+We can also sort the data.
+
+Say we want to sort the data according to the percentage of district populations with a bachelor's degree or higher:
+
+``` r
+impeach %>% 
+  arrange(pct_bachelors)
+```
+
+This will automatically arrange the data in ascending order, from lowest to highest percentage.
+
+\-\-\-\-\-\-\-\-\--
+
+If we wanted the same sorting, but only for those who voted against impeachment:
+
+``` r
+impeach %>% 
+  filter(for_impeachment == 'NO') %>% 
+  arrange(pct_bachelors)
+```
+
+Then we only get results where for_impeachment is a "NO".
+
+\-\-\-\-\-\-\-\-\--
+
+Sorting by bachelor's degree, we can also see results from those who are against impeachment and whose district's bachelor's percentage is below the national average:
+
+``` r
+impeach %>% 
+  filter(for_impeachment == 'NO', 
+         pct_bachelors_compared_to_national == 'BELOW') %>%
+  arrange(pct_bachelors)
+```
+
+\-\-\-\-\-\-\-\-\--
+
+We can also filter results to those who are against impeachment and are all from the same specific state.
+
+``` r
+impeach %>% 
+  filter(for_impeachment == 'NO', 
+         state == 'NJ')
+```
+
+In this case, we only get results for members who are against impeachment and from New Jersey.
+
+\-\-\-\-\-\-\-\-\--
+
+If we wanted to see those who voted for impeachment at a certain time and then sort the results, we could do the following:
+
+``` r
+impeach %>% 
+  filter(for_impeachment == 'YES', 
+         date_year < 2019) %>%
+  arrange(desc(clinton_percent))
+```
+
+In this case, we see those who were a "YES" to impeachment, declared before the year 2019, and the results are then sorted in order from highest to lowest Clinton vote percentages.
+
+\-\-\-\-\-\-\-\-\--
+
+There is another command, nrow(), that will give you the rows left in a dataset after you have filtered the results, so you can see just how many people fit each of your specifications. Here's an example on how to use it with this dataset:
+
+``` r
+nrow(impeach %>% 
+    filter(for_impeachment == 'NO', gdp_above_national == 'BELOW'))
+```
+
+This result gives us the total number of members against impeachment who come from districts with a GDP below the national figure.
+
+\-\-\-\-\-\-\-\-\--
+
+So, with this foundation of filtering and sorting, there are plenty of more complicated concepts that call for these kinds of specifications. It's common for coding with data analysis to involve different filters and subsets in order to get meaningful percentages and look at correlations within datasets, so that's what we've gone through here.

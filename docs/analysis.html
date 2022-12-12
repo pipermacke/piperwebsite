@@ -209,6 +209,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>       p16winningparty <span class="sc">==</span> <span class="st">'R'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Since we already have a column distinguishing the members by district (named “p16winningparty”), all we have to do is set it to show those with output “R”.</p>
 <p>----------</p>
+<p>Now if we wanted to specify even further, say for those who voted against impeachment, were from a district Trump won in 2016, and were from a district Mitt Romney won in 2012, we would do the following:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(impeach, for_impeachment <span class="sc">==</span> <span class="st">'NO'</span>, </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>       p16winningparty <span class="sc">==</span> <span class="st">'R'</span>, </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>       p12winningparty <span class="sc">==</span> <span class="st">'R'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We just use the column p12winning party this time, and set it to give outputs of “R”.</p>
+<p>----------</p>
+<p>If we wanted to filter for those who voted for impeachment in the month of September 2019:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(impeach, for_impeachment <span class="sc">==</span> <span class="st">'YES'</span>,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>       date_month <span class="sc">==</span> <span class="dv">9</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>       date_year <span class="sc">==</span> <span class="dv">2019</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>As you can see, we use both the date and year to get the desired output.</p>
+<p>----------</p>
+<p>To get members that voted for impeachment and are from a district where Clinton won more than 70% of the vote in 2016:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(impeach, for_impeachment <span class="sc">==</span> <span class="st">'YES'</span>,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       clinton_percent <span class="sc">&gt;</span> <span class="fl">70.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We can use the “greater than” symbol to specify results to ones that are larger than the desired number we’re looking for, which in this case in 70.</p>
+<p>----------</p>
+<p>We can also sort the data.</p>
+<p>Say we want to sort the data according to the percentage of district populations with a bachelor’s degree or higher:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>impeach <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(pct_bachelors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will automatically arrange the data in ascending order, from lowest to highest percentage.</p>
+<p>----------</p>
+<p>If we wanted the same sorting, but only for those who voted against impeachment:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>impeach <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">'NO'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(pct_bachelors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then we only get results where for_impeachment is a “NO”.</p>
+<p>----------</p>
+<p>Sorting by bachelor’s degree, we can also see results from those who are against impeachment and whose district’s bachelor’s percentage is below the national average:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>impeach <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">'NO'</span>, </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>         pct_bachelors_compared_to_national <span class="sc">==</span> <span class="st">'BELOW'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(pct_bachelors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>----------</p>
+<p>We can also filter results to those who are against impeachment and are all from the same specific state.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>impeach <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">'NO'</span>, </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>         state <span class="sc">==</span> <span class="st">'NJ'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In this case, we only get results for members who are against impeachment and from New Jersey.</p>
+<p>----------</p>
+<p>If we wanted to see those who voted for impeachment at a certain time and then sort the results, we could do the following:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>impeach <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">'YES'</span>, </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>         date_year <span class="sc">&lt;</span> <span class="dv">2019</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(clinton_percent))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In this case, we see those who were a “YES” to impeachment, declared before the year 2019, and the results are then sorted in order from highest to lowest Clinton vote percentages.</p>
+<p>----------</p>
+<p>There is another command, nrow(), that will give you the rows left in a dataset after you have filtered the results, so you can see just how many people fit each of your specifications. Here’s an example on how to use it with this dataset:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(impeach <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">'NO'</span>, gdp_above_national <span class="sc">==</span> <span class="st">'BELOW'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This result gives us the total number of members against impeachment who come from districts with a GDP below the national figure.</p>
+<p>----------</p>
+<p>So, with this foundation of filtering and sorting, there are plenty of more complicated concepts that call for these kinds of specifications. It’s common for coding with data analysis to involve different filters and subsets in order to get meaningful percentages and look at correlations within datasets, so that’s what we’ve gone through here.</p>
 
 
 
