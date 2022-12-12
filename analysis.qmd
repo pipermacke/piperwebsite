@@ -2,3 +2,43 @@
 title: "Code Walkthrough"
 editor: visual
 ---
+
+Here we'll be walking through a very basic, introductory analysis of data regarding votes for and against the impeachment of former president Trump in 2021.
+
+First we have to load in packages to analyze the data, which we do like this:
+
+``` r
+library(tidyverse)
+library(lubridate)
+```
+
+Once these packages are loaded, we need to load in the data we will be using. Assuming we have already downloaded the csv file containing the data, this is how we do that:
+
+``` r
+impeach <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRh8d5JaDqBtByzNw2JZF3idaACobDhhk-p7chJoktA0HawELHFOvjQOqCpzGA4MGONvPlR7GASqW-K/pub?gid=1765341510&single=true&output=csv")
+```
+
+Now we can analyze the data.
+
+\-\-\-\-\-\-\-\-\--
+
+If we wanted to get only results from those who voted against Trump's impeachment, we would need to use the filter() command, like so:
+
+``` r
+filter(impeach, for_impeachment == 'NO')
+```
+
+We command R to filter the for_impeachment column to only show outputs of "NO", so it gives us all the results of those within the data set that voted against impeachment.
+
+\-\-\-\-\-\-\-\-\--
+
+If we wanted to specify results even further, we could filter the results to show those who both voted against impeachment and were a member of a district Trump won in 2016.
+
+``` r
+filter(impeach, for_impeachment == 'NO',
+       p16winningparty == 'R')
+```
+
+Since we already have a column distinguishing the members by district (named "p16winningparty"), all we have to do is set it to show those with output "R".
+
+\-\-\-\-\-\-\-\-\--

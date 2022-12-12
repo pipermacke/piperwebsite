@@ -58,8 +58,8 @@
   {
     "objectID": "analysis.html",
     "href": "analysis.html",
-    "title": "analysis",
+    "title": "Code Walkthrough",
     "section": "",
-    "text": "test"
+    "text": "First we have to load in packages to analyze the data, which we do like this:\nlibrary(tidyverse)\nlibrary(lubridate)\nOnce these packages are loaded, we need to load in the data we will be using. Assuming we have already downloaded the csv file containing the data, this is how we do that:\nimpeach <- read_csv(\"https://docs.google.com/spreadsheets/d/e/2PACX-1vRh8d5JaDqBtByzNw2JZF3idaACobDhhk-p7chJoktA0HawELHFOvjQOqCpzGA4MGONvPlR7GASqW-K/pub?gid=1765341510&single=true&output=csv\")\nNow we can analyze the data.\n----------\nIf we wanted to get only results from those who voted against Trump’s impeachment, we would need to use the filter() command, like so:\nfilter(impeach, for_impeachment == 'NO')\nWe command R to filter the for_impeachment column to only show outputs of “NO”, so it gives us all the results of those within the data set that voted against impeachment.\n----------\nIf we wanted to specify results even further, we could filter the results to show those who both voted against impeachment and were a member of a district Trump won in 2016.\nfilter(impeach, for_impeachment == 'NO',\n       p16winningparty == 'R')\nSince we already have a column distinguishing the members by district (named “p16winningparty”), all we have to do is set it to show those with output “R”.\n----------"
   }
 ]
