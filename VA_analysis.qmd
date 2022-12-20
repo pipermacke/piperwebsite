@@ -1,5 +1,5 @@
 ---
-title: "Code Walkthrough - Virginia Election Data"
+title: "Virginia Election Data Analysis"
 editor: visual
 ---
 

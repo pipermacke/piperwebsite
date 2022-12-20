@@ -1,5 +1,5 @@
 ---
-title: "Code Walkthrough - Basic"
+title: "Filtering and Sorting"
 editor: visual
 ---
 
