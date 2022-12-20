@@ -17,7 +17,9 @@ website:
       - href: newsstory.qmd
         text: News Story
       - href: analysis.qmd
-        text: Code Walkthrough
+        text: Filtering Walkthrough
+      - href: VA_analysis.qmd
+        text: Election Data Walkthrough
       - href: Piper Macke Resume.pdf
         text: Resume
   page-footer: 
