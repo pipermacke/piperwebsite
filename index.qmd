@@ -2,17 +2,21 @@
 title: "Piper S. Macke"
 about:
   template: jolla
-  image: thisisme.png
+  image: cropped headshot.jpg
   links:
     - icon: twitter
-      text: twitter
+      text: Twitter
       href: https://twitter.com/pipermacke
     - icon: github
       text: Github
       href: https://github.com/pipermacke
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/pipermacke
 ---
 
-I'm Piper. Welcome to my webpage!
+Welcome to my website! 
+Coded entirely by myself with RStudio and with the help of Github.
 
 ## Education
 

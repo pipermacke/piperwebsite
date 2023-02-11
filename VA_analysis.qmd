@@ -3,9 +3,13 @@ title: "Virginia Election Data Analysis"
 editor: visual
 ---
 
-First we'll need to load a couple libraries so our code works right. This is a step that doesn't require much explaining.
 
-```{r}
+### For this project, I was given real data from the 2020 presidential election in the state of Virginia. I was to find relationships between variables and show information I found interesting using R packages. The following is a walkthrough of my completion of the project, with comments included in the code.
+
+
+First we'll need to load the necessary libraries so our code works right. For this project, I used "DT", "tidyverse", "janitor", "httr", "jsonlite", "kableExtra", and "here".
+
+```{r include=FALSE}
 library(DT) 
 library(tidyverse)
 library(janitor)
@@ -25,16 +29,16 @@ joined_vacomparison <- readRDS("joined_vacomparison.rds") #I uploaded this RDS f
 
 ```
 
-This way, we have extra columns with percentages and a dataset that is comprised of two previously joined datasets after using the inner_join() and mutate() functions.
+This way, we have extra columns with percentages and a dataset that is comprised of two previously joined datasets after using the inner_join() and mutate() functions. Here's a look at the raw data table:
 
 ```{r}
 
 DT::datatable(joined_vacomparison)
 ```
 
-### Include code to a new column to the dataset calculating the difference between the percentage of the vote Youngkin received and what Trump received.
+### TASK 1) Include code to a new column to the dataset calculating the difference between the percentage of the vote Youngkin received and what Trump received.
 
-Since we already have very helpful previously created columns that tell us the percentage of the vote that Youngkin received and the percentage that Trump received, all we have to do is use a simple mutate() equation and name the column.
+Since we already have very helpful, previously created columns that tell us the percentage of the vote that Youngkin received and the percentage that Trump received, all we have to do is use a simple mutate() equation and name the column.
 
 ```{r}
 
@@ -45,7 +49,7 @@ joined_vacomparison <- joined_vacomparison %>% #this is where the new column we'
 
 ```
 
-### Use this new column to find the Top 5 counties with the highest differences between Younkin/Trump percent, and then create a well-labeled chart to visualize them.
+### TASK 2) Use this new column to find the Top 5 counties with the highest differences between Younkin/Trump percent, and then create a well-labeled chart to visualize them.
 
 There's two steps to this problem. First, we need to find a way to specify the top 5 counties with the highest differences in vote, but that will be easy considering we just made a new column that calculates the difference for us.
 
@@ -72,7 +76,7 @@ ggplot(highest_difference_counties, aes(x = reorder(locality, Youngkin_Trump_dif
 
 ```
 
-### Create a chart that shows the Top 5 counties based on where Youngkin got the highest percentage of the vote
+### TASK 3) Create a chart that shows the Top 5 counties based on where Youngkin got the highest percentage of the vote
 
 Now we just need to make a few changes to the process we just did and focus only on Youngkin. It will be another two-step process. First, finding the top 5 counties according to Youngkin's percentage, then creating the chart.
 
@@ -101,7 +105,7 @@ ggplot(top_youngkin_pcts, aes(x = reorder(locality, pct_youngkin), y = pct_young
 
 As you can see from our newly created chart, the top five counties are all pretty even with each other for this particular comparison.
 
-### Create a table that shows the Top 5 counties based on where McCauliffe got the highest percentage of the vote
+### TASK 4) Create a table that shows the Top 5 counties based on where McCauliffe got the highest percentage of the vote
 
 The first part of this process will be almost identical to the last, but for a new candidate. Then, we'll select the variables we wish to display in a table and plug these into the DT function to give us a new table.
 
@@ -128,7 +132,7 @@ DT::datatable(only_mccauliffe_pcts) #so when we plug our new object into our DT 
 
 ```
 
-### Based on your own analysis, explain a finding of your choosing, include a narrative explaining it to the audience and then create either a chart or table displaying it.
+### TASK 5) Based on your own analysis, explain a finding of your choosing, include a narrative explaining it to the audience and then create either a chart or table displaying it.
 
 I thought it would be interesting to only look at counties that had more than 10,000 votes for each presidential candidate and to then see which candidate was more popular with the counties with a larger number of voters. So to do that, I created two new objects that only included counties that fit the 10,000 vote minimum and then looked at, of those counties, how often Biden won vs Trump.
 
@@ -170,7 +174,7 @@ DT::datatable(big_counties_trump_biden) #use DT to make interactive table for th
 
 And now we have a table to use for when we only want to see counties that had over 10,000 people vote for both parties in the 2020 presidential election.
 
-### Based on your own analysis, explain a second finding of your choosing, include a narrative explaining it to the audience and then create either a chart or table displaying it.
+### TASK 6) Based on your own analysis, explain a second finding of your choosing, include a narrative explaining it to the audience and then create either a chart or table displaying it.
 
 Since Biden and McCauliffe both ran as representatives of the Democratic party, I thought it would be interesting to analyze how often Biden won when both he and McCauliffe received over 50% of the vote for a county.
 
@@ -197,7 +201,7 @@ ggplot(dem_win, aes(x = locality, y = biden_pct)) + #using our new dataset with 
 
 ```
 
-### Based on your own analysis, explain a third finding of your choosing, include a narrative explaining it to the audience and then create either a chart or table displaying it.
+### TASK 7) Based on your own analysis, explain a third finding of your choosing, include a narrative explaining it to the audience and then create either a chart or table displaying it.
 
 Because Youngkin and Trump are both members of the Republican party and McCauliffe and Biden are both members of the Democratic party, I thought it would be interesting to see how often the results of the presidential vs governor election were two different parties. Particularly, I wanted to see when Biden had a larger percentage of the votes but Youngkin won the percentage of the votes for governor. The first thing we need to do to find any of these instances is filter the data.
 

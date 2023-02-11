@@ -16,10 +16,8 @@ website:
         text: Research Paper
       - href: newsstory.qmd
         text: News Story
-      - href: analysis.qmd
-        text: Filtering Walkthrough
       - href: VA_analysis.qmd
-        text: Election Data Walkthrough
+        text: Coding Walkthrough
       - href: Piper Macke Resume.pdf
         text: Resume
   page-footer: 
