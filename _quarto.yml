@@ -12,10 +12,6 @@ website:
         text: About
       - href: portfolio.qmd
         text: Portfolio
-      - href: researchpaper.qmd
-        text: Research Paper
-      - href: newsstory.qmd
-        text: News Story
       - href: VA_analysis.qmd
         text: Coding Walkthrough
       - href: Piper Macke Resume.pdf
