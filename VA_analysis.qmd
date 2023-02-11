@@ -218,5 +218,3 @@ biden_youngkin_cleaned <- biden_youngkin %>% #cleaning out the columns we want
 DT::datatable(biden_youngkin_cleaned) #using DT feature to show our new cleaned out data 
 
 ```
-
-
