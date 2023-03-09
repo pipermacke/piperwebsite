@@ -15,12 +15,12 @@ about:
       href: https://linkedin.com/in/pipermacke
 ---
 
-Welcome to my website! 
-Coded entirely by myself with RStudio and with the help of Github.
+Welcome to my website!
+
+I'm currently working on adding more of my class and personal projects to my portfolio section to include Python, HTML, Javascript, and CSS coding. For now, you can check out some of my other work!
 
 ## Education
 
 George Washington University
 
-Major: Data Science 
-
+Major: Data Science

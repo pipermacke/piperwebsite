@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -80,19 +80,24 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">Home</a>
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page">About</a>
+    <a class="nav-link active" href="./about.html" aria-current="page">
+ <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./portfolio.html">Portfolio</a>
+    <a class="nav-link" href="./portfolio.html">
+ <span class="menu-text">Portfolio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./VA_analysis.html">Coding Walkthrough</a>
+    <a class="nav-link" href="./VA_analysis.html">
+ <span class="menu-text">Coding Walkthrough</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Piper Macke Resume.pdf">Resume</a>
+    <a class="nav-link" href="./PM Resume - march 2023.pdf">
+ <span class="menu-text">Resume</span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -111,6 +116,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#being-a-student-athlete" id="toc-being-a-student-athlete" class="nav-link active" data-scroll-target="#being-a-student-athlete">Being a student-athlete</a></li>
   <li><a href="#why-i-chose-data-science" id="toc-why-i-chose-data-science" class="nav-link" data-scroll-target="#why-i-chose-data-science">Why I chose Data Science</a></li>
+  <li><a href="#how-i-grew-up" id="toc-how-i-grew-up" class="nav-link" data-scroll-target="#how-i-grew-up">How I Grew Up</a></li>
   </ul>
 </nav>
     </div>
@@ -127,6 +133,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -135,12 +142,15 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="being-a-student-athlete" class="level3">
 <h3 class="anchored" data-anchor-id="being-a-student-athlete">Being a student-athlete</h3>
-<p>I’m a full time student in my third year at The George Washington University. For the past three years, I’ve devoted all my time outside of school to being a Division 1 Women’s Basketball player for my university. While my experience as a student-athlete has taught me extensively about what it means to have discipline, to be adaptable, and to be a part of a team, I’ve chosen to move in a direction that I feel better supports my studies and future career.</p>
+<p>I’m a full time student in my third year at The George Washington University. For the past three years, I’ve devoted all my time outside of school to being a Division 1 Women’s Basketball player for the school. While my experience as a student-athlete has taught me extensively about what it means to have discipline, to be adaptable, and to be a part of a team, I’ve chosen to move in a direction that I feel better supports my studies and future career.</p>
 </section>
 <section id="why-i-chose-data-science" class="level3">
 <h3 class="anchored" data-anchor-id="why-i-chose-data-science">Why I chose Data Science</h3>
 <p>I chose to major in Data Science before I actually knew what it was. I was planning on studying journalism, but the way that my scheduling worked out (luckily) made that impossible. When I met with my academic advisor in utter desperation and no other ideas in mind, I thought back to what classes I had enjoyed taking in previous semesters and even in high school. Despite all of my friends warning me against taking an Intro to Statistics class, it was one of the only classes that I enjoyed for, if nothing else, the challenge. I always understood math pretty well, but that statistics class is what really changed where I wanted to go.</p>
 <p>I saw that Data Science was a major I could choose. Then I saw that it had a domain that focused on Data Journalism, and I really didn’t need to see anymore. I’m happier with that decision than I could ever have imagined, and back then I didn’t even know that I would come to love all of the computer and coding-oriented facets of Data Science.</p>
+</section>
+<section id="how-i-grew-up" class="level3">
+<h3 class="anchored" data-anchor-id="how-i-grew-up">How I Grew Up</h3>
 
 
 </section>
@@ -187,7 +197,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -223,24 +250,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
