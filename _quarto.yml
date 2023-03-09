@@ -17,7 +17,6 @@ website:
       - href: PM Resume - march 2023.pdf
         text: Resume
   page-footer: 
-    left: "Copyright 2022" 
     right: 
       - icon: github
         href: https://github.com/pipermacke
