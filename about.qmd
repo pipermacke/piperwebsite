@@ -2,16 +2,32 @@
 title: "About"
 ---
 
-### Being a student-athlete
-I'm a full time student in my third year at The George Washington University. For the past three years, I've devoted all my time outside of school to being a Division 1 Women's Basketball player for the school. While my experience as a student-athlete has taught me extensively about what it means to have discipline, to be adaptable, and to be a part of a team, I've chosen to move in a direction that I feel better supports my studies and future career. 
+### My experience as a student-athlete
 
+I'm a full time student in my third year at The George Washington University. For the past three years, I've devoted all my time outside of class to being a Division 1 Women's Basketball player for the school. While my experience as a student-athlete has taught me extensively about what it means to have discipline, to be adaptable, and to be a part of a team, I'm extremely excited to now focus solely on my studies and career.
 
+*Honest thoughts on my freshman year:*
+
+Playing basketball has made my college experience extremely unique. After graduating high school in 2020, I was thrown into a life where I was taking all of my classes virtually while experiencing the social newness of university purely in the form of basketball. My teammates from that year quickly became some of the best friends I've ever had, and we got through a whirlwind of a year by being together and always leaning on each other for support.
+
+I say often that I'm glad I made it through that year but also that I'm glad I'll never have to go back. I had moved into a city I had only visited once, not knowing a single person on the team prior to my arrival, and having never even seen the university before it became my only home. All of the sudden, I was 500 miles away from where I grew up, strictly forbidden from seeing family and any person outside of the team, leaving campus, or getting in a car.
+
+*Thoughts on my experience as a whole:*
+
+Recognizing the anomaly of a school year 2020-2021 was, I learned extremely important skills from being a student-athlete for the next years following. Being a collegiate athlete means constant competition, and not just against the other team. Even during the 6 A.M. lifts in the middle of July, when everyone other student is home for the summer, you are competing to show you are not replaceable.
+
+The minimum expectation as a Division One athlete is to come to practice every single day ready to give all the energy and passion you have. There is no room to slack off or take it easy. This lifestyle was exhausting, but it is certainly a reason why my work ethic and intentions are hard to match.
+
+*A deeper look into my experience:*
+
+As I reflect on my experience as an athlete, I am very excited for the next challenge of life. I am absolutely certain that I will be an exceptional employee, and it is because my success is now entirely up to me.
+
+I no longer hope for my coaches' acknowledgement of the hours I put in alone and how they haven't gone unnoticed. I now devote this extra time to my studies and career, and I have found a lot of peace in knowing that I am now spending this time in a way that feels much more purposeful and also more conducive to my happiness.
+
+While the experience I had as a student-athlete could never be replicated by a job or in an office setting, it is why I am confident that I will excel when I do begin this next chapter of my life.
 
 ### Why I chose Data Science
-I chose to major in Data Science before I actually knew what it was. I was planning on studying journalism, but the way that my scheduling worked out (luckily) made that impossible. When I met with my academic advisor in utter desperation and no other ideas in mind, I thought back to what classes I had enjoyed taking in previous semesters and even in high school. Despite all of my friends warning me against taking an Intro to Statistics class, it was one of the only classes that I enjoyed for, if nothing else, the challenge. I always understood math pretty well, but that statistics class is what really changed where I wanted to go. 
 
-I saw that Data Science was a major I could choose. Then I saw that it had a domain that focused on Data Journalism, and I really didn't need to see anymore. I'm happier with that decision than I could ever have imagined, and back then I didn't even know that I would come to love all of the computer and coding-oriented facets of Data Science. 
+I chose to major in Data Science before I actually knew what it was. I was planning on studying journalism, but the way that my scheduling worked out (luckily) made that impossible. When I met with my academic advisor in utter desperation and no other ideas in mind, I thought back to what classes I had enjoyed taking in previous semesters and even in high school. Despite all of my friends warning me against taking an Intro to Statistics class, it was one of the only classes that I enjoyed for, if nothing else, the challenge. I always understood math pretty well, but that statistics class is what really changed where I wanted to go.
 
-
-
-
+I saw that Data Science was a major I could choose. Then I saw that it had a domain that focused on Data Journalism, and I really didn't need to see anymore. I'm happier with that decision than I could ever have imagined, and back then I didn't even know that I would come to love all of the computer and coding-oriented facets of Data Science.
