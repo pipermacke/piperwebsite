@@ -59,6 +59,16 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+<script src="site_libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="site_libs/datatables-binding-0.27/datatables.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="site_libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="site_libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="site_libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -128,7 +138,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#dear-data-project" id="toc-dear-data-project" class="nav-link active" data-scroll-target="#dear-data-project">Dear Data Project</a>
   <ul class="collapse">
   <li><a href="#a-week-of-studying" id="toc-a-week-of-studying" class="nav-link" data-scroll-target="#a-week-of-studying">A Week of Studying</a></li>
-  <li><a href="#legend" id="toc-legend" class="nav-link" data-scroll-target="#legend">Legend</a></li>
+  <li><a href="#legend" id="toc-legend" class="nav-link" data-scroll-target="#legend">Legend</a>
+  <ul class="collapse">
+  <li><a href="#remarks" id="toc-remarks" class="nav-link" data-scroll-target="#remarks">Remarks</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -140,7 +153,8 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="dear-data-project" class="level1">
 <h1>Dear Data Project</h1>
-<p>The following is a graph representing my studying habits over the course of a week about two weeks into the beginning of the spring semester. I’m taking 4 classes this semester, with each of them included in the graph below.</p>
+<p><strong>Assignment:</strong> For my “Dear Data” project for Data Visualization, I was to collect a week’s worth of data regarding any aspect of my life. I chose to write down how long I studied for each of my 4 classes that week, including some categorical data on when, where, or with who I did the studying. With all the data I collected, I created a hand-drawn graph and legend that is shown below. This assignment is inspired by the original “Dear Data” project by Giorgia Lupi and Stefanie Posavec.</p>
+<p>This is the graph representing my studying habits over the course of seven days about two weeks into the beginning of the spring semester.</p>
 <section id="a-week-of-studying" class="level2">
 <h2 class="anchored" data-anchor-id="a-week-of-studying">A Week of Studying</h2>
 <div class="quarto-figure quarto-figure-center">
@@ -158,8 +172,20 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>You can see in this hand-drawn legend that color corresponds to class, size to total hours spent studying, design to overall enjoyment level, background color to whether or not I studied alone, and the body to the location where I did the majority of my studying.</p>
+<section id="remarks" class="level3">
+<h3 class="anchored" data-anchor-id="remarks">Remarks</h3>
+<p>This was a super fun project to do from start to finish, since my professor allowed for total freedom for what the actual graph could look like. The data collection process for this project was also relatively straightforward and not too complicated, so it did make what is normally a longer process a bit easier.</p>
+<p>So you can see how the actual data was transformed into a page of butterflies, I’ve included a table using the numerical and categorical data in the csv file.</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-bb43620654da1f89ba86" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-bb43620654da1f89ba86">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9"],["Linear Algebra","Data Mining","Data Visualization","Intro Web Software Development","TOTALS:",null,"Enjoyment","Alone or not","Location"],["1.5","1.5","0","0","3.00",null,"Normal","Not alone","Apartment"],["2.5","0","0","0","2.50",null,"Grueling","Alone","Library"],["2","0","1","2","5.00",null,"Normal","Alone","Apartment"],["0","0","1","0","1.00",null,"Fun","Not Alone","Apartment"],["1.5","2","0.5","0","4.00",null,"Grueling","Alone","Library"],["3","0.5","0","0","3.50",null,"Fun","Alone","Apartment"],["1","0","0","0","1.00",",","Normal","Not alone","Apartment"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Daily Studying in Hours<\/th>\n      <th>SATURDAY<\/th>\n      <th>SUNDAY<\/th>\n      <th>MONDAY<\/th>\n      <th>TUESDAY<\/th>\n      <th>WEDNESDAY<\/th>\n      <th>THURSDAY<\/th>\n      <th>FRIDAY<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 
 
+</section>
 </section>
 </section>
 

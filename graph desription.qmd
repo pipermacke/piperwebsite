@@ -1,13 +1,41 @@
 # Dear Data Project
 
-The following is a graph representing my studying habits over the course of a week about two weeks into the beginning of the spring semester. I'm taking 4 classes this semester, with each of them included in the graph below. 
+**Assignment:** For my "Dear Data" project for Data Visualization, I was to collect a week's worth of data regarding any aspect of my life. I chose to write down how long I studied for each of my 4 classes that week, including some categorical data on when, where, or with who I did the studying. With all the data I collected, I created a hand-drawn graph and legend that is shown below. This assignment is inspired by the original "Dear Data" project by Giorgia Lupi and Stefanie Posavec.
+
+This is the graph representing my studying habits over the course of seven days about two weeks into the beginning of the spring semester.
 
 ## A Week of Studying
+
 ![](Graph.pdf){fig-align="center" width="600" height="825"}
 
 Many different aspects of each hand-drawn butterfly represent a different facet of the data. The colors, patterns, size, and background color of each butterfly indicates different specifications regarding my studying habits for the day that butterfly represents. The legend for how to read this graph is as follows, including an important message regarding the data itself:
 
 ## Legend
+
 ![](how%20to%20read%20.pdf){fig-align="center" width="600" height="825"}
 
-You can see in this hand-drawn legend that color corresponds to class, size to total hours spent studying, design to overall enjoyment level, background color to whether or not I studied alone, and the body to the location where I did the majority of my studying. 
+You can see in this hand-drawn legend that color corresponds to class, size to total hours spent studying, design to overall enjoyment level, background color to whether or not I studied alone, and the body to the location where I did the majority of my studying.
+
+### Remarks
+
+This was a super fun project to do from start to finish, since my professor allowed for total freedom for what the actual graph could look like. The data collection process for this project was also relatively straightforward and not too complicated, so it did make what is normally a longer process a bit easier.
+
+So you can see how the actual data was transformed into a page of butterflies, I've included a table using the numerical and categorical data in the csv file.
+
+```{r include=FALSE}
+library(tidyverse)
+library(janitor)
+library(dplyr)
+library(knitr)
+
+studyingdata <- read_csv('Daily Studying Data.csv')
+colnames(studyingdata) <- studyingdata[1,]
+studyingdata <- studyingdata[-1, ]
+
+
+
+```
+
+```{r, echo=FALSE}
+DT::datatable(studyingdata, options = list(dom = 't'))
+```
