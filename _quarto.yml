@@ -12,8 +12,12 @@ website:
         text: About
       - href: portfolio.qmd
         text: Portfolio
-      - href: VA_analysis.qmd
-        text: Coding Walkthrough
+      - text: Projects
+        menu:
+        - href: VA_analysis.qmd
+          text: Virginia Voters Analysis
+        - href: graph desription.qmd
+          text: Dear Data
       - href: PM_resume_updated.pdf
         text: Resume
   page-footer: 
@@ -30,7 +34,6 @@ format:
     css: styles.css
     toc: true
     
-
 
 
 
