@@ -14,7 +14,7 @@ website:
       - href: about.qmd
         text: About
       - href: portfolio.qmd
-        text: Portfolio
+        text: Writing Samples
       - text: Projects
         menu:
         - href: VA_analysis.qmd
