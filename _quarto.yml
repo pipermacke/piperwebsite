@@ -9,8 +9,6 @@ website:
     location: navbar
     type: overlay
   navbar:
-    background: '#f4d9eb'
-    foreground: '#0c0019'
     left:
       - href: index.qmd
         text: Home
