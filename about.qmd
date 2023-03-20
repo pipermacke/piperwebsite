@@ -14,20 +14,20 @@ I say often that I'm glad I made it through that year but also that I'm glad I'l
 
 *Thoughts on my experience as a whole:*
 
-Recognizing the anomaly of a school year 2020-2021 was, I learned extremely important skills from being a student-athlete for the next years following. Being a collegiate athlete means constant competition, and not just against the other team. Even during the 6 A.M. lifts in the middle of July, when everyone other student is home for the summer, you are competing to show you are not replaceable.
+Recognizing the anomaly of a school year 2020-2021 was, I learned extremely important skills from being a student-athlete for the next years following. Being a collegiate athlete means constant competition, and not just against the other team; every day you compete to show you are not replaceable.
 
-The minimum expectation as a Division One athlete is to come to practice every single day ready to give all the energy and passion you have. There is no room to slack off or take it easy. This lifestyle was exhausting, but it is certainly a reason why my work ethic and intentions are hard to match.
+The minimum expectation as a Division One athlete is to come to practice every single day ready to give all the energy and passion you have. There is no room to slack off or take it easy. As exhausting as it was, this lifestyle played a pivotal role in why my work ethic and intentions are hard to match.
 
 *A deeper look into my experience:*
 
 As I reflect on my experience as an athlete, I am very excited for the next challenge of life. I am absolutely certain that I will be an exceptional employee, and it is because my success is now entirely up to me.
 
-I no longer see success as my coaches' acknowledgement how the hours haven't gone unnoticed. I can devote this extra time to my studies and career, and I have found a lot of peace in knowing that I am now spending this time in a way that feels much more purposeful and simply more conducive to my happiness.
+I no longer have to hope that the hours I'd put in for basketball hadn't gone unnoticed. I now devote these hours to my studies and career, and I have total faith that it is in my own best interest. This transition has allowed me to find a lot of peace in how I'm spending my time, and it's also in a way that feels much more purposeful and simply more conducive to my happiness.
 
 While the experience I had as a student-athlete could never be replicated by a job or in an office setting, it is why I am confident that I will excel when I do begin this next chapter of my life.
 
 ### Why I chose Data Science
 
-I chose to major in Data Science before I actually knew what it was. I was planning on studying journalism, but the way that my scheduling worked out (luckily) made that impossible. When I met with my academic advisor in utter desperation and no other ideas in mind, I thought back to what classes I had enjoyed taking in previous semesters and even in high school. Despite all of my friends warning me against taking an Intro to Statistics class, it was one of the only classes that I enjoyed for, if nothing else, the challenge. I always understood math pretty well, but that statistics class is what really changed where I wanted to go.
+I chose to major in Data Science before I actually knew what it was. I was planning on studying journalism, but the way that my scheduling worked out (luckily) made that impossible. When I met with my academic advisor in utter desperation and no other ideas in mind, I thought back to what classes I had enjoyed taking in previous semesters. One of the first math courses I took in college was an Intro to Statistics class, and it was one of the only classes that I enjoyed for, if nothing else, the challenge. As I walked out of my final exam, I knew I needed to change directions with what I wanted to study.
 
-I saw that Data Science was a major I could choose. Then I saw that it had a domain that focused on Data Journalism, and I really didn't need to see anymore. I'm happier with that decision than I could ever have imagined, and back then I didn't even know that I would come to love all of the computer and coding-oriented facets of Data Science.
+I saw that Data Science was a major offered by the university, and then I saw that it had a domain that focused on Data Journalism, and that became my sole focus from then on. I'm happier with that decision than I could ever have imagined, and back then I didn't even know that I would come to love all of the computer and coding-oriented facets of Data Science.
