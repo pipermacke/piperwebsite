@@ -7,14 +7,14 @@ Here we'll be walking through a very basic, introductory analysis of data regard
 
 First we have to load in packages to analyze the data, which we do like this:
 
-``` r
+```{r results='markup'}
 library(tidyverse)
 library(lubridate)
 ```
 
 Once these packages are loaded, we need to load in the data we will be using. Assuming we have already downloaded the csv file containing the data, this is how we do that:
 
-``` r
+```{r}
 impeach <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRh8d5JaDqBtByzNw2JZF3idaACobDhhk-p7chJoktA0HawELHFOvjQOqCpzGA4MGONvPlR7GASqW-K/pub?gid=1765341510&single=true&output=csv")
 ```
 
@@ -24,7 +24,7 @@ Now we can analyze the data.
 
 If we wanted to get only results from those who voted against Trump's impeachment, we would need to use the filter() command, like so:
 
-``` r
+```{r}
 filter(impeach, for_impeachment == 'NO')
 ```
 
@@ -34,7 +34,7 @@ We command R to filter the for_impeachment column to only show outputs of "NO", 
 
 If we wanted to specify results even further, we could filter the results to show those who both voted against impeachment and were a member of a district Trump won in 2016.
 
-``` r
+```{r}
 filter(impeach, for_impeachment == 'NO',
        p16winningparty == 'R')
 ```
@@ -45,7 +45,7 @@ Since we already have a column distinguishing the members by district (named "p1
 
 Now if we wanted to specify even further, say for those who voted against impeachment, were from a district Trump won in 2016, and were from a district Mitt Romney won in 2012, we would do the following:
 
-``` r
+```{r}
 filter(impeach, for_impeachment == 'NO', 
        p16winningparty == 'R', 
        p12winningparty == 'R')
@@ -57,7 +57,7 @@ We just use the column p12winning party this time, and set it to give outputs of
 
 If we wanted to filter for those who voted for impeachment in the month of September 2019:
 
-``` r
+```{r}
 filter(impeach, for_impeachment == 'YES',
        date_month == 9,
        date_year == 2019)
@@ -69,7 +69,7 @@ As you can see, we use both the date and year to get the desired output.
 
 To get members that voted for impeachment and are from a district where Clinton won more than 70% of the vote in 2016:
 
-``` r
+```{r}
 filter(impeach, for_impeachment == 'YES',
        clinton_percent > 70.0)
 ```
@@ -82,7 +82,7 @@ We can also sort the data.
 
 Say we want to sort the data according to the percentage of district populations with a bachelor's degree or higher:
 
-``` r
+```{r}
 impeach %>% 
   arrange(pct_bachelors)
 ```
@@ -93,7 +93,7 @@ This will automatically arrange the data in ascending order, from lowest to high
 
 If we wanted the same sorting, but only for those who voted against impeachment:
 
-``` r
+```{r}
 impeach %>% 
   filter(for_impeachment == 'NO') %>% 
   arrange(pct_bachelors)
@@ -105,7 +105,7 @@ Then we only get results where for_impeachment is a "NO".
 
 Sorting by bachelor's degree, we can also see results from those who are against impeachment and whose district's bachelor's percentage is below the national average:
 
-``` r
+```{r}
 impeach %>% 
   filter(for_impeachment == 'NO', 
          pct_bachelors_compared_to_national == 'BELOW') %>%
@@ -116,7 +116,7 @@ impeach %>%
 
 We can also filter results to those who are against impeachment and are all from the same specific state.
 
-``` r
+```{r}
 impeach %>% 
   filter(for_impeachment == 'NO', 
          state == 'NJ')
@@ -128,7 +128,7 @@ In this case, we only get results for members who are against impeachment and fr
 
 If we wanted to see those who voted for impeachment at a certain time and then sort the results, we could do the following:
 
-``` r
+```{r}
 impeach %>% 
   filter(for_impeachment == 'YES', 
          date_year < 2019) %>%
@@ -141,7 +141,7 @@ In this case, we see those who were a "YES" to impeachment, declared before the 
 
 There is another command, nrow(), that will give you the rows left in a dataset after you have filtered the results, so you can see just how many people fit each of your specifications. Here's an example on how to use it with this dataset:
 
-``` r
+```{r}
 nrow(impeach %>% 
     filter(for_impeachment == 'NO', gdp_above_national == 'BELOW'))
 ```
