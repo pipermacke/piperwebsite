@@ -24,7 +24,7 @@ website:
         - href: graph desription.qmd
           text: Dear Data
         - href: mappingcopy.qmd
-          text: Chloropleth Mapping
+          text: Choropleth Mapping
       - href: PM_resume_updated.pdf
         text: Resume
   page-footer: 

@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-# Creating Chloropleth Maps in R
+# Creating Choropleth Maps in R
 
 ### **Part 1:**
 
@@ -185,7 +185,7 @@ However, this map communicates a very easy to understand and reasonable descript
 
 Modifying the first map of incomes in the U.S., I'll switch from a classed scale to a gradient scale, so the output looks like this:
 
-```{r}
+```{r eval=FALSE}
 tm_shape(joined_income_data) +
   tm_fill('Median_HH_Inc_ACS', title = 'Median Income',
           textNA = 'Unknown', 
@@ -201,6 +201,8 @@ tm_shape(joined_income_data) +
              size = .4)
 ```
 
+![](gradient_income.png)
+
 ##### Remarks:
 
 This data is mapped using a gradient scale rather than a classed scale, and the gradient scale is determined by the data itself, having built-in breaks where the lowest and highest incomes in the dataset are. Because of the breaks, this map does well in communicating the most common incomes for the country as a whole simply by looking at just the legend. However, the differentiation between an income of 60,000 and 140,000 is substantial, and only a small gradient separates these two values (and the same goes for an income of 12,000 compared to 43,000). For this reason, I think the classed scale is the best option to map this data.
@@ -211,17 +213,13 @@ Since my first mapping of this graph used a sequential scale, I'll switch it now
 
 First, I want to find the true average of U.S. incomes in the dataset in order to have a meaningful midpoint within the divergent scale, so that can be found by doing the following:
 
-```{r}
+```{r eval=FALSE}
 mean(joined_income_data$Median_HH_Inc_ACS, na.rm=TRUE)
 ```
 
 The average income in the U.S. according to this dataset is \$52,640, so I'll round the midpoint in the diverging scale to \$53,000 in order to better comprehend which counties have a median income greater than and less than the true average of the dataset.
 
-```{r include=FALSE}
-#tmaptools::palette_explorer()
-```
-
-```{r warning=FALSE}
+```{r eval=FALSE}
 tm_shape(joined_income_data) +
   tm_polygons(col='Median_HH_Inc_ACS', 
               style='cont', 
@@ -236,6 +234,8 @@ tm_shape(joined_income_data) +
   tm_credits('U.S. Dept of Agriculture Economic Research Service, June 2021', 
              size = .4)
 ```
+
+![](divergent_income.png)
 
 ##### Remarks:
 
