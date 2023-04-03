@@ -10,6 +10,8 @@ editor: visual
 
 **Assignment: Map a continuous variable that is distributed geographically using any data of your choosing without it being simply a map of population density.**
 
+------------------------------------------------------------------------
+
 For my first continuous variable to be distributed geographically, I am using a dataset containing the median income for each U.S. county, as of June 2021.\
 
 ```{r message=FALSE}
@@ -29,7 +31,7 @@ blankcounties <- tigris::counties(cb = TRUE, resolution = '20m', progress_bar = 
 
 
 
-csvdata <- read.csv('income.csv')
+csvdata <- read.csv('Income.csv')
 
 
 ```
@@ -81,23 +83,32 @@ This data is from June 2021, so it would be especially interesting to compare th
 
 **Assignment: Map another continuous variable that is distributed geographically using new data and a new map.**
 
+\*\*For this part, I'll be attaching pictures of what the mappings look like, because the csv file containing the data is too large to render here.
+
+------------------------------------------------------------------------
+
 Going in a different direction, my second continuous variable to be mapped is the percentage of forest area in each country across the world.
 
 The link to the data containing the trend for global forest percentage as well as the download link to the csv file can be found [here.](https://data.worldbank.org/indicator/AG.LND.FRST.ZS?locations=CA)
 
-```{r message=FALSE}
+```{r eval=FALSE}
+install.packages('maps')
 
 blankcountries <- map_data('world') %>% 
   filter(region != 'Antarctica', 
          region != 'French Southern and Antarctic Lands')
 
-forestdata <- read_csv('forestarea.csv',  problems())
 
+
+```
+
+```{r eval=FALSE}
+forestdata <- read_csv('forestarea.csv')
 ```
 
 *Cleaning data:*
 
-```{r message=FALSE}
+```{r eval=FALSE}
 
 names(forestdata) <- forestdata[1, ]
 
@@ -128,7 +139,7 @@ forestdata2020$CountryName <- recode(forestdata2020$CountryName,
 
 *JOINING DATA TO BE MAPPED:*
 
-```{r message=FALSE}
+```{r eval=FALSE}
 forestmapdata <- left_join(blankcountries, forestdata2020, by = c('region' = 'CountryName'))
 
 class(forestmapdata)
@@ -136,7 +147,7 @@ class(forestmapdata)
 
 ##### *MAPPING:*
 
-```{r}
+```{r eval=FALSE}
 legend_title <- 'Forest Percentage'
 
 ggplot() +
@@ -156,6 +167,8 @@ ggplot() +
  
 ```
 
+![](global_mapping.png){fig-align="center"}
+
 #### Themes/Remarks
 
 This map represents the 2020 data regarding the percentage of each country that is covered by forest. The dataset I used actually has some interesting trends to see when it comes to the decades before 2020, and to re-graph each country based on their percentages from many years ago would show that forest area is declining globally.
@@ -168,7 +181,7 @@ However, this map communicates a very easy to understand and reasonable descript
 
 ### Part 3:
 
-#### a.) Assignment: Using a map you've already created, switch the scaling of the variable you were previously using. 
+#### a.) Assignment: Using a map you've already created, switch the scaling of the variable you were previously using.
 
 Modifying the first map of incomes in the U.S., I'll switch from a classed scale to a gradient scale, so the output looks like this:
 
@@ -192,7 +205,7 @@ tm_shape(joined_income_data) +
 
 This data is mapped using a gradient scale rather than a classed scale, and the gradient scale is determined by the data itself, having built-in breaks where the lowest and highest incomes in the dataset are. Because of the breaks, this map does well in communicating the most common incomes for the country as a whole simply by looking at just the legend. However, the differentiation between an income of 60,000 and 140,000 is substantial, and only a small gradient separates these two values (and the same goes for an income of 12,000 compared to 43,000). For this reason, I think the classed scale is the best option to map this data.
 
-#### b.) Assignment: Again using a map you've already created, switch the scale from sequential to divergent. 
+#### b.) Assignment: Again using a map you've already created, switch the scale from sequential to divergent.
 
 Since my first mapping of this graph used a sequential scale, I'll switch it now to be on a divergent scale.
 
@@ -205,7 +218,7 @@ mean(joined_income_data$Median_HH_Inc_ACS, na.rm=TRUE)
 The average income in the U.S. according to this dataset is \$52,640, so I'll round the midpoint in the diverging scale to \$53,000 in order to better comprehend which counties have a median income greater than and less than the true average of the dataset.
 
 ```{r include=FALSE}
-tmaptools::palette_explorer()
+#tmaptools::palette_explorer()
 ```
 
 ```{r warning=FALSE}
@@ -226,6 +239,6 @@ tm_shape(joined_income_data) +
 
 ##### Remarks:
 
-I actually find that mapping the median income of U.S. counties on a diverging scale is more meaningful when it comes to seeing which counties are below the poverty line and which are way above it. That beind said, because I was using just the median income of this dataset and not a value that draws the line for what income is considered in poverty and what is not, it's not necessarily correct to conclude that those below the midpoint in the diverging scale are in poverty.
+I actually find that mapping the median income of U.S. counties on a diverging scale is more meaningful when it comes to seeing which counties are below the poverty line and which are way above it. That being said, because I was using just the median income of this dataset and not a value that draws the line for what income is considered in poverty and what is not, it's not necessarily correct to conclude that those below the midpoint in the diverging scale are in poverty.
 
 However, it still maps which counties are making less or more than the median U.S. income, and this information is still extremely valuable, especially when it's mapped across the entire country.
