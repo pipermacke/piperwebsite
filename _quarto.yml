@@ -4,6 +4,7 @@ project:
 
 website:
   title: "PM"
+  image: cropped headshot.jpg
 
   search: 
     location: navbar
