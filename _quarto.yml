@@ -23,6 +23,8 @@ website:
           text: Virginia Voters Analysis
         - href: graph desription.qmd
           text: Dear Data
+        - href: mappingcopy.qmd
+          text: Chloropleth Mapping
       - href: PM_resume_updated.pdf
         text: Resume
   page-footer: 
