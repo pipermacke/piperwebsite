@@ -14,7 +14,7 @@ editor: visual
 
 For my first continuous variable to be distributed geographically, I am using a dataset containing the median income for each U.S. county, as of June 2021.\
 
-```{r message=FALSE}
+```{r echo=FALSE, warning=FALSE}
 library(ggplot2)
 library(dplyr)
 library(tidyverse)
@@ -23,7 +23,7 @@ library(tmap)
 
 ```
 
-```{r message=FALSE}
+```{r echo=FALSE, warning=FALSE}
 
 blankcounties <- tigris::counties(cb = TRUE, resolution = '20m', progress_bar = FALSE) |>
   filter(NAME != 'Puerto Rico') %>% 
@@ -36,9 +36,9 @@ csvdata <- read.csv('Income.csv')
 
 ```
 
-*Cleaning data:*
+*The next step was cleaning the data, which for this particular step consisted of changing around the variable types, joining the data to a generic county dataset, etc.*
 
-```{r}
+```{r echo=FALSE, warning=FALSE}
 blankcounties$FIPS <- paste(blankcounties$STATEFP, blankcounties$COUNTYFP, sep='')
 
 
@@ -52,9 +52,9 @@ csvdata$FIPS <- as.numeric(csvdata$FIPS)
 #tmaptools::palette_explorer()
 ```
 
-##### *MAPPING:*
+##### *Now to see the actual map of the data:*
 
-```{r}
+```{r echo=FALSE, warning=FALSE}
 joined_income_data <- left_join(blankcounties, csvdata, by = c('FIPS' = 'FIPS'))
 
 tm_shape(joined_income_data) +
@@ -83,15 +83,11 @@ This data is from June 2021, so it would be especially interesting to compare th
 
 **Assignment: Map another continuous variable that is distributed geographically using new data and a new map.**
 
-\*\*For this part, I'll be attaching pictures of what the mappings look like, because the csv file containing the data is too large to render here.
-
-------------------------------------------------------------------------
-
 Going in a different direction, my second continuous variable to be mapped is the percentage of forest area in each country across the world.
 
 The link to the data containing the trend for global forest percentage as well as the download link to the csv file can be found [here.](https://data.worldbank.org/indicator/AG.LND.FRST.ZS?locations=CA)
 
-```{r eval=FALSE}
+```{r echo=FALSE, warning=FALSE}
 install.packages('maps')
 
 blankcountries <- map_data('world') %>% 
@@ -102,13 +98,13 @@ blankcountries <- map_data('world') %>%
 
 ```
 
-```{r eval=FALSE}
+```{r echo=FALSE, warning=FALSE}
 forestdata <- read_csv('forestarea.csv')
 ```
 
-*Cleaning data:*
+*Again, cleaning the data; this time was a little more complicated, as the country names in the csv file didn't match many of those in the base dataset.*
 
-```{r eval=FALSE}
+```{r echo=FALSE, warning=FALSE}
 
 names(forestdata) <- forestdata[1, ]
 
@@ -137,17 +133,15 @@ forestdata2020$CountryName <- recode(forestdata2020$CountryName,
 
 ```
 
-*JOINING DATA TO BE MAPPED:*
-
-```{r eval=FALSE}
+```{r echo=FALSE, warning=FALSE}
 forestmapdata <- left_join(blankcountries, forestdata2020, by = c('region' = 'CountryName'))
 
 class(forestmapdata)
 ```
 
-##### *MAPPING:*
+##### *Now mapping the data:*
 
-```{r eval=FALSE}
+```{r echo=FALSE, warning=FALSE}
 legend_title <- 'Forest Percentage'
 
 ggplot() +
@@ -185,7 +179,7 @@ However, this map communicates a very easy to understand and reasonable descript
 
 Modifying the first map of incomes in the U.S., I'll switch from a classed scale to a gradient scale, so the output looks like this:
 
-```{r eval=FALSE}
+```{r echo=FALSE, warning=FALSE}
 tm_shape(joined_income_data) +
   tm_fill('Median_HH_Inc_ACS', title = 'Median Income',
           textNA = 'Unknown', 
@@ -211,7 +205,7 @@ This data is mapped using a gradient scale rather than a classed scale, and the 
 
 Since my first mapping of this graph used a sequential scale, I'll switch it now to be on a divergent scale.
 
-First, I want to find the true average of U.S. incomes in the dataset in order to have a meaningful midpoint within the divergent scale, so that can be found by doing the following:
+First, I want to find the true average of U.S. incomes in the dataset in order to have a meaningful midpoint within the divergent scale.
 
 ```{r eval=FALSE}
 mean(joined_income_data$Median_HH_Inc_ACS, na.rm=TRUE)
@@ -219,7 +213,7 @@ mean(joined_income_data$Median_HH_Inc_ACS, na.rm=TRUE)
 
 The average income in the U.S. according to this dataset is \$52,640, so I'll round the midpoint in the diverging scale to \$53,000 in order to better comprehend which counties have a median income greater than and less than the true average of the dataset.
 
-```{r eval=FALSE}
+```{r echo=FALSE, warning=FALSE}
 tm_shape(joined_income_data) +
   tm_polygons(col='Median_HH_Inc_ACS', 
               style='cont', 
