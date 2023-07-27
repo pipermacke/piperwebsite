@@ -107,7 +107,7 @@ forestdata
 
 ```{r echo=FALSE, warning=FALSE, results='hide', message=FALSE}
 
-forestdata
+
 
 forestdata2020 = subset(forestdata, select = c('Country Name', 'Country Code', 'Indicator Name', 'Indicator Code', '2020'))
 
