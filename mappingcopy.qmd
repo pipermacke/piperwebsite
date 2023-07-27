@@ -100,13 +100,14 @@ blankcountries <- map_data('world') %>%
 
 ```{r echo=FALSE, warning=FALSE}
 forestdata <- read_csv('forestarea.csv')
+colnames(forestdata)
 ```
 
 *Again, cleaning the data; this time was a little more complicated, as the country names in the csv file didn't match many of those in the base dataset.*
 
 ```{r echo=FALSE, warning=FALSE}
 
-names(forestdata) <- forestdata[1, ]
+forestdata
 
 forestdata2020 = subset(forestdata, select = c('Country Name', 'Country Code', 'Indicator Name', 'Indicator Code', '2020'))
 
