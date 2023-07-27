@@ -14,7 +14,7 @@ editor: visual
 
 For my first continuous variable to be distributed geographically, I am using a dataset containing the median income for each U.S. county, as of June 2021.\
 
-```{r echo=FALSE, warning=FALSE}
+```{r echo=FALSE, results='hide', message=FALSE}
 library(ggplot2)
 library(dplyr)
 library(tidyverse)
@@ -23,7 +23,7 @@ library(tmap)
 
 ```
 
-```{r echo=FALSE, warning=FALSE}
+```{r echo=FALSE, warning=FALSE, results='hide', message=FALSE}
 
 blankcounties <- tigris::counties(cb = TRUE, resolution = '20m', progress_bar = FALSE) |>
   filter(NAME != 'Puerto Rico') %>% 
@@ -87,7 +87,7 @@ Going in a different direction, my second continuous variable to be mapped is th
 
 The link to the data containing the trend for global forest percentage as well as the download link to the csv file can be found [here.](https://data.worldbank.org/indicator/AG.LND.FRST.ZS?locations=CA)
 
-```{r echo=FALSE, warning=FALSE}
+```{r echo=FALSE, warning=FALSE, results='hide', message=FALSE}
 install.packages('maps')
 
 blankcountries <- map_data('world') %>% 
@@ -100,12 +100,12 @@ blankcountries <- map_data('world') %>%
 
 ```{r echo=FALSE, warning=FALSE}
 forestdata <- read_csv('forestarea.csv')
-colnames(forestdata)
+forestdata
 ```
 
 *Again, cleaning the data; this time was a little more complicated, as the country names in the csv file didn't match many of those in the base dataset.*
 
-```{r echo=FALSE, warning=FALSE}
+```{r echo=FALSE, warning=FALSE, results='hide', message=FALSE}
 
 forestdata
 
