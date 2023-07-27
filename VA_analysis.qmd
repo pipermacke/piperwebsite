@@ -5,6 +5,12 @@ editor: visual
 
 **Assignment:** For this project, I was given real data from the 2020 presidential election in the state of Virginia. I was to find relationships between variables and show information I found interesting using R packages. The following is a walkthrough of my completion of the project, with comments included in the code.
 
+------------------------------------------------------------------------
+
+Let me also note here that this is my very first RStudio visualization project. But I'm keeping it here (unedited) to show how far I've come!
+
+------------------------------------------------------------------------
+
 First we'll need to load the necessary libraries so our code works right. For this project, I used "DT", "tidyverse", "janitor", "httr", "jsonlite", "kableExtra", and "here".
 
 ```{r include=FALSE}
