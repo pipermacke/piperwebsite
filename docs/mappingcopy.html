@@ -255,9 +255,22 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 <section id="now-mapping-the-data" class="level5">
 <h5 class="anchored" data-anchor-id="now-mapping-the-data"><em>Now mapping the data:</em></h5>
 <div class="cell">
-<div class="cell-output-display">
-<p><img src="mappingcopy_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
-</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>legend_title <span class="ot">&lt;-</span> <span class="st">'Forest Percentage'</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>HIDDEN_MAP <span class="ot">&lt;-</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> forestmapdata, </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group, </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">fill =</span> present)) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_continuous</span>(legend_title, </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                        <span class="at">low =</span> <span class="st">'black'</span>, </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">high =</span> <span class="st">'green'</span>) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Percent of Forest Area by Country'</span>, </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">'The World Bank, 2020'</span>) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.background =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -278,11 +291,6 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 <section id="a.-assignment-using-a-map-youve-already-created-switch-the-scaling-of-the-variable-you-were-previously-using." class="level4">
 <h4 class="anchored" data-anchor-id="a.-assignment-using-a-map-youve-already-created-switch-the-scaling-of-the-variable-you-were-previously-using.">a.) Assignment: Using a map you’ve already created, switch the scaling of the variable you were previously using.</h4>
 <p>Modifying the first map of incomes in the U.S., I’ll switch from a classed scale to a gradient scale, so the output looks like this:</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="mappingcopy_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
 <p><img src="gradient_income.png" class="img-fluid"></p>
 <section id="remarks" class="level5">
 <h5 class="anchored" data-anchor-id="remarks">Remarks:</h5>
@@ -294,14 +302,9 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 <p>Since my first mapping of this graph used a sequential scale, I’ll switch it now to be on a divergent scale.</p>
 <p>First, I want to find the true average of U.S. incomes in the dataset in order to have a meaningful midpoint within the divergent scale.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(joined_income_data<span class="sc">$</span>Median_HH_Inc_ACS, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(joined_income_data<span class="sc">$</span>Median_HH_Inc_ACS, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The average income in the U.S. according to this dataset is $52,640, so I’ll round the midpoint in the diverging scale to $53,000 in order to better comprehend which counties have a median income greater than and less than the true average of the dataset.</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="mappingcopy_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
 <p><img src="divergent_income.png" class="img-fluid"></p>
 <section id="remarks-1" class="level5">
 <h5 class="anchored" data-anchor-id="remarks-1">Remarks:</h5>

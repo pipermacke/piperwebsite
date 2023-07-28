@@ -142,10 +142,11 @@ class(forestmapdata)
 
 ##### *Now mapping the data:*
 
-```{r echo=FALSE, warning=FALSE}
+```{r warning=FALSE, results='hide'}
 legend_title <- 'Forest Percentage'
 
-ggplot() +
+HIDDEN_MAP <- 
+  ggplot() +
   geom_polygon(data = forestmapdata, 
                aes(x = long, y = lat, group = group, 
                    fill = present)) +
@@ -181,7 +182,8 @@ However, this map communicates a very easy to understand and reasonable descript
 Modifying the first map of incomes in the U.S., I'll switch from a classed scale to a gradient scale, so the output looks like this:
 
 ```{r echo=FALSE, warning=FALSE}
-tm_shape(joined_income_data) +
+HIDDEN_MAP3 <- 
+  tm_shape(joined_income_data) +
   tm_fill('Median_HH_Inc_ACS', title = 'Median Income',
           textNA = 'Unknown', 
           colorNA = 'blue',
@@ -215,7 +217,8 @@ mean(joined_income_data$Median_HH_Inc_ACS, na.rm=TRUE)
 The average income in the U.S. according to this dataset is \$52,640, so I'll round the midpoint in the diverging scale to \$53,000 in order to better comprehend which counties have a median income greater than and less than the true average of the dataset.
 
 ```{r echo=FALSE, warning=FALSE}
-tm_shape(joined_income_data) +
+HIDDEN_MAP2 <- 
+  tm_shape(joined_income_data) +
   tm_polygons(col='Median_HH_Inc_ACS', 
               style='cont', 
               border.alpha = 0.2,
