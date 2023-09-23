@@ -9,6 +9,11 @@ While most of what I do now involves coding and data visualization, I've worked 
 
 ## Academic Papers
 
+This essay analyzes the ethics of data collected for the purpose of training machine learning algorithms alongside its usage in developing more advanced artificial intelligence models: 
+
+Access it: [Analyzing the Ethics of Machine Learning Data](<audioset_paper.pdf>). 
+
+---
 
 My freshman year research paper that observes how the perception of female sexuality has evolved throughout history, pulling from multiple historical journals and other research papers with similar cause:
 
