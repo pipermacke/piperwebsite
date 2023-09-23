@@ -4,7 +4,7 @@ title: "About"
 
 ### My experience as a student-athlete
 
-I'm a full time student in my third year at The George Washington University. For the past three years, I've devoted all my time outside of class to being a Division 1 Women's Basketball player for the school. While my experience as a student-athlete has taught me extensively about what it means to have discipline, to be adaptable, and to be a part of a team, I'm extremely excited to now focus solely on my studies and career.
+I'm a full time student as a senior at The George Washington University. For the first three years of college, I had devoted all my time outside of class to being a Division One Women's Basketball player for GW. While my experience as a student-athlete has taught me extensively about what it means to have discipline, to be adaptable, and to be a part of a team, I'm extremely excited to now focus solely on my studies and career.
 
 *Honest thoughts on my freshman year:*
 
@@ -16,15 +16,19 @@ I say often that I'm glad I made it through that year but also that I'm glad I'l
 
 Recognizing the anomaly of a school year 2020-2021 was, I learned extremely important skills from being a student-athlete for the next years following. Being a collegiate athlete means constant competition, and not just against the other team; every day you compete to show you are not replaceable.
 
-The minimum expectation as a Division One athlete is to come to practice every single day ready to give all the energy and passion you have. There is no room to slack off or take it easy. As exhausting as it was, this lifestyle played a pivotal role in why my work ethic and intentions are hard to match.
+The minimum expectation as a Division One athlete is to come every single day ready to give all the energy and passion you have. Any outside thoughts or commitments have no place on the court.
+
+When I started seriously looking to succeed in my studies and career rather than on the court, I realized how ready I was to take the next step.
 
 *A deeper look into my experience:*
 
-As I reflect on my experience as an athlete, I am very excited for the next challenge of life. I am absolutely certain that I will be an exceptional employee, and it is because my success is now entirely up to me.
+I always prided myself on how I was not a quitter, would never be a quitter, and didn't like people who were quitters.
 
-I now devote the dozens of hours a week that were previously reserved soley for athletics to my studies and career, and I have total faith that it is in my own best interest. This transition has allowed me to find peace in how I'm spending my time, and it's in a way that feels much more purposeful and simply more conducive to my happiness.
+But quitting basketball was the best decision I have ever made.
 
-While the experience I had as a student-athlete could never be replicated by a job or in an office setting, it is why I am confident that I will excel when I do begin this next chapter of my life.
+Given the opportunity to do it over a million times would still have me standing here saying the same.
+
+I thank basketball for the ways that it has positively affected my life, especially in my work ethic, world view, and mental strength. I believe I took from basketball everything positive it could offer me. I stopped playing when I realized that it wasn't basketball that was going to help me grow in the way that I knew I could - it was everything else I went to school for in the first place.
 
 ### Why I chose Data Science
 
