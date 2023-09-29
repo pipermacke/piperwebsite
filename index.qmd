@@ -15,9 +15,9 @@ about:
       href: https://linkedin.com/in/pipermacke
 ---
 
-Welcome to my website!
+Hey! Thanks for finding my website!
 
-I'm currently working on adding more of my projects to include Python, HTML, Javascript, and CSS coding. For now, you can check out some of my other work!
+I'm currently working on adding projects here as I complete them. For now, you can check out any of my finalized work or my resume!
 
 ## Education
 
