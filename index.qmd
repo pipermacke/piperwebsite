@@ -15,7 +15,7 @@ about:
       href: https://linkedin.com/in/pipermacke
 ---
 
-Hey! Thanks for finding my website!
+Hey!
 
 I'm currently working on adding projects here as I complete them. For now, you can check out any of my finalized work or my resume!
 
