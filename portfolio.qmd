@@ -1,25 +1,16 @@
 ---
 title: "Written Portfolio"
-
 ---
 
-While most of what I do now involves coding and data visualization, I've worked on a variety of different written academic papers since I've been at GWU. Some of them can be accessed below by clicking on the link. 
+Final paper written for Data Ethics that individually analyzes the codes of conduct at big data companies IBM, Splunk, and Databricks while proposing justifications for their variations:
+
+Access it: [Analyzing Codes of Ethics in Big Data](<ethics_final_paper.pdf>).
 
 ---
-
-## Academic Papers
 
 This essay analyzes the ethics of data collected for the purpose of training machine learning algorithms alongside its usage in developing more advanced artificial intelligence models: 
 
 Access it: [Analyzing the Ethics of Machine Learning Data](<audioset_paper.pdf>). 
-
----
-
-My freshman year research paper that observes how the perception of female sexuality has evolved throughout history, pulling from multiple historical journals and other research papers with similar cause:
-
-Access it: ["Female Sexuality: 
-How the Historical Perception Influences the Contemporary View"](<https://docs.google.com/document/d/1PU2isaP_yhn561FKpj-Sz8lZA7hOz0k6RszMM9OOVfQ/edit?usp=sharin>). 
-
 
 --- 
 
@@ -30,10 +21,10 @@ Access it: ["Organizational Analysis of Trader Joe's"](<https://docs.google.com/
 
 --- 
 
-The beat I chose to report on during a semester in an advanced news writing class dealt with public health. 
-As one of several pieces I wrote for my beat, the following paper was written just before Roe v. Wade was overturned and it looks at the development of how such a decision was made. 
+My freshman year research paper that observes how the perception of female sexuality has evolved throughout history, pulling from multiple historical journals and other research papers with similar cause:
 
-Access it: ["Kentucky Abortion Ban News Story"](<https://docs.google.com/document/d/1l4Haofr5YlLxGMBhDI7sjdAsdgadbXElRpyrH2vZYf0/edit?usp=sharing>). 
+Access it: ["Female Sexuality: 
+How the Historical Perception Influences the Contemporary View"](<https://docs.google.com/document/d/1PU2isaP_yhn561FKpj-Sz8lZA7hOz0k6RszMM9OOVfQ/edit?usp=sharin>). 
 
 
 

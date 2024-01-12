@@ -1,3 +1,5 @@
+**Completed:** Spring 2023
+
 # Dear Data Project
 
 **Assignment:** For my "Dear Data" project for Data Visualization, I was to collect a week's worth of data regarding any aspect of my life. I chose to write down how long I studied for each of my 4 classes that week, including some categorical data on when, where, or with who I did the studying. With all the data I collected, I created a hand-drawn graph and legend that is shown below. This assignment is inspired by the original "Dear Data" project by Giorgia Lupi and Stefanie Posavec.

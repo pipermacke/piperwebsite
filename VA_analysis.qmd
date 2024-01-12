@@ -3,6 +3,8 @@ title: "Virginia Election Data Analysis"
 editor: visual
 ---
 
+**Completed:** Fall 2022
+
 **Assignment:** For this project, I was given real data from the 2020 presidential election in the state of Virginia. I was to find relationships between variables and show information I found interesting using R packages. The following is a walkthrough of my completion of the project, with comments included in the code.
 
 ------------------------------------------------------------------------

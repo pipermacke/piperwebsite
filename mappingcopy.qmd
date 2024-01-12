@@ -4,6 +4,8 @@ format: html
 editor: visual
 ---
 
+**Completed:** Spring 2023
+
 # Creating Choropleth Maps in R
 
 ### **Part 1:**
