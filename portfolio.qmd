@@ -2,6 +2,11 @@
 title: "Written Portfolio"
 ---
 
+Paper examining the link between political leaning and reported frequency of specific crimes in the U.S. using a World Values Survey dataset to conduct a regression analysis in Stata: 
+
+Access it: [Politics in Crime: Examining the Link Between Political Ideology and Crime Reports](<politics_in_crime.pdf>).
+---
+
 Final paper written for Data Ethics that individually analyzes the codes of conduct at big data companies IBM, Splunk, and Databricks while proposing justifications for their variations:
 
 Access it: [Analyzing Codes of Ethics in Big Data](<ethics_final_paper.pdf>).

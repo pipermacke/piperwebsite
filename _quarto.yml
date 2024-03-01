@@ -26,6 +26,8 @@ website:
           text: Choropleth Mapping
         - href: https://pipermacke.github.io/Will-my-sister-go-D1-RStudio-proj/
           text: Will my sister go D1?
+        - href: politics_in_crime.pdf
+          text: Politics in Crime
       - href: macke_resume.pdf
         text: Resume
   page-footer: 
